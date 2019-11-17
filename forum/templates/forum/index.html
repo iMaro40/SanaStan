@@ -1,0 +1,9 @@
+{% extends "forum/base.html" %}
+
+{% block content %}
+  {% for topic in ForumTopics %}
+    <div class = "jumbotron"> <a class ="display-3" href="{{topic.get_absolute_url}}"<h1> {{topic}} </h1></a> </div>
+  {% endfor %}
+
+
+{% endblock content %}

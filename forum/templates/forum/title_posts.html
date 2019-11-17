@@ -1,0 +1,69 @@
+{% extends "forum/base.html" %}
+
+{% block content %}
+
+      <div class = "col-10 postTitleContainer">
+        <div>
+          <h3 class = "display-3 font-weight-bold postTitle"> <i>{{Title.title}}</i> </h3>
+        </div>
+      </div>
+
+    <div class = "row flex-column allPosts">
+      <div class ="row post m-2">
+
+        <div class = "col-2 postProfileContainer">
+
+            <div class ="col postProfile rounded">
+              <img class = "img-fluid rounded-circle postPicture" src="{{Title.creator.profile.image.url}}">
+              <div class = "authorNameContainer">
+                <p class = "authorName"> {{Title.creator.username}} </p>
+              </div>
+              <div class = "authorEmailContainer">
+                <p class = "authorEmail"> {{Title.creator.email}} </p>
+              </div>
+            </div>
+
+        </div>
+
+        <div class = "col-8 postContentContainer rounded">
+          <div class = "col postContent">
+            <p class = ""> {{Title.opening_post}} </p>
+          </div>
+        </div>
+      </div>
+
+      {%for post in Posts%}
+
+      <div class ="row post m-2">
+
+        <div class = "col-2 postProfileContainer">
+
+            <div class ="col postProfile rounded">
+              <img class = "img-fluid rounded-circle postPicture" src="{{post.author.profile.image.url}}">
+              <div class = "authorNameContainer">
+                <p class = "authorName"> {{post.author.username}} </p>
+              </div>
+              <div class = "authorEmailContainer">
+                <p class = "authorEmail"> {{post.author.email}} </p>
+              </div>
+            </div>
+
+        </div>
+
+        <div class = "col-8 postContentContainer rounded">
+          <div class = "col postContent">
+            <p class = ""> {{post.content}} </p>
+          </div>
+        </div>
+      </div> <!-- end of row post -->
+
+      {% endfor %}
+    </div> <!--- end of all posts -->
+      <div class = "row m-2">
+      <a href="{% url 'create-post' Title.topic Title.pk %}" class="buttonWrapper">
+        <button type = "button" class ="btn btn-success"> Make a new post! </button> </a>
+      </div>
+
+
+
+{% endblock content %}

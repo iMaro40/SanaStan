@@ -1,0 +1,17 @@
+{% extends "forum/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+  <div class = "container formContainer" id="CreateTitle">
+    <form method = 'POST'>
+      <div class = "form-group">
+        {% csrf_token %}
+        {{postCreationForm|crispy}}
+      </div>
+
+      <div class = "form-group">
+        <button class ="btn btn-success" type = "submit"> Create post! </button>
+      </div>
+    </form>
+  </div>
+  {% endblock body %}

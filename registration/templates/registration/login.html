@@ -1,0 +1,30 @@
+{% extends "forum/base.html" %}
+{% load crispy_forms_tags %}
+{% block body%}
+
+
+<div class = "container mt-4 pb-2" id="LoginPage">
+  {% if messages %}
+    {%for message in messages %}
+      <div class = "alert alert-success" role = "alert">
+        {{message}}
+      </div>
+    {% endfor %}
+  {% endif %}
+  <h4 class = "display-4"> Login </h4>
+  <form method = 'POST'>
+    <div class = "form-group">
+      {% csrf_token %}
+      {{form|crispy}}
+    </div>
+
+    <div class = "form-group">
+      <button class ="btn btn-success" type = "submit"> Login </button>
+    </div>
+  </form>
+
+</div>
+
+
+
+{% endblock body %}

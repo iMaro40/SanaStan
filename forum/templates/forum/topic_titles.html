@@ -1,0 +1,10 @@
+{% extends "forum/base.html" %}
+
+{% block content %}
+  {%for x in Titles%}
+    <div class = "jumbotron display-4"> <a href="{{x.get_absolute_url}}"<h1> {{x}} </h1></a> </div>
+  {% endfor %}
+
+  <a href="{% url 'create-title' ForumTopic.topic %}" class="buttonWrapper"><button type = "button" class ="btn btn-success"> Make a new topic! </button> </a>
+
+{% endblock content %}
