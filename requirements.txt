@@ -55,7 +55,7 @@ sqlparse==0.3.0
 ssh-import-id==5.7
 stevedore==1.31.0
 systemd-python==234
-Twisted==17.9.0
+Twisted==19.7.0
 ufw==0.36
 urllib3==1.22
 virtualenv==15.1.0
