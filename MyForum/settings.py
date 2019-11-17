@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'userprofile.apps.UserprofileConfig',
     'crispy_forms',
     'rest_framework',
+    'dj-database-url'
 ]
 
 MIDDLEWARE = [
